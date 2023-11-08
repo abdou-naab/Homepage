@@ -14,6 +14,15 @@ module.exports = {
         type: "asset/resource",
       },
       {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: { name: "[name].[ext]", outputPath: "./src/images/" },
+          },
+        ],
+      },
+      {
         test: /\.css$/i,
         exclude: /\.lazy\.css$/i,
         use: ["style-loader", "css-loader"],

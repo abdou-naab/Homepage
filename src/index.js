@@ -7,6 +7,7 @@ import battleship_app from "../src/images/battleship.jpg";
 import battleship_app_phone from "../src/images/battleship-ph.jpg";
 import restaurant_app from "../src/images/restaurant.jpg";
 import restaurant_app_phone from "../src/images/restaurant-ph.jpg";
+console.log("Assalam Alaikom");
 
 const sections = document.querySelectorAll(".content section");
 const about = document.querySelector("a[href='#about']");
@@ -52,8 +53,10 @@ function highlightActiveLink() {
 }
 
 function displayAtBreakPoint() {
+  console.log("resising");
   if (window.innerWidth <= 870) {
-    document.querySelector("header nav ul").remove();
+    if (document.querySelector("header nav ul"))
+      document.querySelector("header nav ul").remove();
     document.querySelector("section#about .title").appendChild(about);
     document.querySelector("section#projects .title").appendChild(projects);
     document.querySelector("section#contact .title").appendChild(contact);
@@ -78,4 +81,3 @@ function displayAtBreakPoint() {
 displayAtBreakPoint();
 window.addEventListener("scroll", highlightActiveLink);
 window.addEventListener("resize", displayAtBreakPoint);
-console.log("Assalam Alaikom");

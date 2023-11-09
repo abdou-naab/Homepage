@@ -333,4 +333,7 @@ section#contact {
   .main header * {
     width: auto;
   }
+  .project .description {
+    font-size: 12px;
+  }
 }

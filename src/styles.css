@@ -8,7 +8,7 @@
   margin: 0;
 
   --vPad: 94px;
-  --hPad: 119px;
+  --hPad: 95px;
   --main-gap: 1rem;
   --content-gap: 3.4rem;
   --social-media-gap: 20px;
@@ -40,14 +40,16 @@ body {
   margin: 0;
   background-color: var(--c0);
   color: var(--c3);
+  display: flex;
+  justify-content: center;
 }
 .main {
   display: flex;
   gap: var(--main-gap);
   padding: 0 var(--hPad);
   margin: 0;
+  border: none;
 }
-
 header {
   width: 50%;
   display: flex;
@@ -72,7 +74,7 @@ header h2 {
   color: var(--c2);
 }
 header h5 {
-  margin-top: 8px;
+  margin-top: 20px;
   width: 50ch;
 }
 header p {
@@ -92,18 +94,18 @@ header nav a {
   display: flex;
   align-items: center;
 }
-header nav .nav-prefix {
+.nav-prefix {
   display: inline-block;
   width: 2rem;
   background-color: var(--c3);
   height: 0.9px;
   margin-right: 0.8rem;
 }
-header nav .active-a span {
+.active-a span {
   font-weight: bold;
   color: var(--c1);
 }
-header nav .active-a .nav-prefix {
+.active-a .nav-prefix {
   background-color: var(--c1);
   width: 3.4rem;
   height: 2px;
@@ -219,12 +221,20 @@ header nav .active-a .nav-prefix {
   width: 50ch;
   margin-top: var(--content-gap);
 }
+.content section .title {
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
 section#about {
   line-height: 1.7rem;
   margin-top: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+}
+section#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 section#projects .project {
   margin-bottom: 3rem;
@@ -253,4 +263,74 @@ section#contact {
 #email:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px var(--c2);
+}
+
+@media (max-width: 1070px) {
+  :root {
+    --hPad: 30px;
+  }
+}
+@media (max-width: 940px) {
+  :root {
+    --hPad: 2rem;
+    --project-width: 45ch;
+  }
+  header {
+    width: 45%;
+  }
+  .content {
+    width: 55%;
+  }
+  .content section {
+    width: 45ch;
+  }
+}
+@media (max-width: 870px) {
+  .main {
+    flex-direction: column;
+    padding: 0;
+  }
+  header,
+  .content {
+    width: 100%;
+    position: static;
+  }
+  header {
+    padding: var(--vPad) var(--hPad) 0 var(--hPad);
+    padding-bottom: 0px;
+  }
+  body {
+    display: block;
+  }
+  .content section {
+    width: 85%;
+  }
+  :root {
+    --project-width: 80%;
+  }
+  .project .description {
+    background: linear-gradient(0deg, var(--c1) 70%, transparent);
+    font-size: clamp(8px, 2.2vw, 1rem);
+  }
+  .project .description a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --project-width: 210px;
+    --hPad: 12px;
+    --vPad: 3rem;
+  }
+  .project {
+    aspect-ratio: 9/16;
+  }
+  .project .technologies {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .main header * {
+    width: auto;
+  }
 }

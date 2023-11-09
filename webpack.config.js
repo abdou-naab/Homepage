@@ -10,17 +10,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|mp3)$/i,
         type: "asset/resource",
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: { name: "[name].[ext]", outputPath: "./src/images/" },
-          },
-        ],
       },
       {
         test: /\.css$/i,
@@ -33,10 +24,6 @@ module.exports = {
           { loader: "style-loader", options: { injectType: "lazyStyleTag" } },
           "css-loader",
         ],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
       },
     ],
   },

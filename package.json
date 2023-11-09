@@ -1,7 +1,7 @@
 {
   "name": "homepage",
   "version": "1.0.0",
-  "description": "Building my first respomsive portfolio, project done @ the odin project.",
+  "description": "Building my first responsive portfolio, project done @ the odin project.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

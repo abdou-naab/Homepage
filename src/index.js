@@ -1,11 +1,39 @@
 import styles from "./styles.css";
-console.log("Assalam Alaikom");
+import weather_app from "../src/images/weather-app.jpg";
+import weather_app_phone from "../src/images/weather-app-ph.jpg";
+import todo_app from "../src/images/todo-app.jpg";
+import todo_app_phone from "../src/images/todo-app-ph.jpg";
+import battleship_app from "../src/images/battleship.jpg";
+import battleship_app_phone from "../src/images/battleship-ph.jpg";
+import restaurant_app from "../src/images/restaurant.jpg";
+import restaurant_app_phone from "../src/images/restaurant-ph.jpg";
 
-const navLinks = document.querySelectorAll("header nav a");
 const sections = document.querySelectorAll(".content section");
+const about = document.querySelector("a[href='#about']");
+const projects = document.querySelector("a[href='#projects']");
+const contact = document.querySelector("a[href='#contact']");
+
+const weather_app_image = document.querySelector(
+  '.project[name="weather-app"] img'
+);
+const todo_app_image = document.querySelector('.project[name="todo"] img');
+const battleship_app_image = document.querySelector(
+  '.project[name="battleship"] img'
+);
+const restaurant_page_app_image = document.querySelector(
+  '.project[name="restaurant-page"] img'
+);
+
+let freshUl = document.createElement("ul");
+freshUl.innerHTML = `
+<li class="about-li"></li>
+<li class="projects-li"></li>
+<li class="contact-li"></li>
+`;
+const navLinks = [about, projects, contact];
 
 function highlightActiveLink() {
-  const scrollPosition = window.scrollY + 5;
+  const scrollPosition = window.scrollY + 50;
   const atBottom =
     window.innerHeight + scrollPosition >= document.body.offsetHeight;
   sections.forEach((section, index) => {
@@ -22,4 +50,32 @@ function highlightActiveLink() {
     }
   });
 }
+
+function displayAtBreakPoint() {
+  if (window.innerWidth <= 870) {
+    document.querySelector("header nav ul").remove();
+    document.querySelector("section#about .title").appendChild(about);
+    document.querySelector("section#projects .title").appendChild(projects);
+    document.querySelector("section#contact .title").appendChild(contact);
+  } else {
+    document.querySelector("header nav").append(freshUl);
+    document.querySelector("li.about-li").append(about);
+    document.querySelector("li.projects-li").append(projects);
+    document.querySelector("li.contact-li").append(contact);
+  }
+  if (window.innerWidth <= 480) {
+    todo_app_image.src = todo_app_phone;
+    weather_app_image.src = weather_app_phone;
+    battleship_app_image.src = battleship_app_phone;
+    restaurant_page_app_image.src = restaurant_app_phone;
+  } else {
+    todo_app_image.src = todo_app;
+    weather_app_image.src = weather_app;
+    battleship_app_image.src = battleship_app;
+    restaurant_page_app_image.src = restaurant_app;
+  }
+}
+displayAtBreakPoint();
 window.addEventListener("scroll", highlightActiveLink);
+window.addEventListener("resize", displayAtBreakPoint);
+console.log("Assalam Alaikom");

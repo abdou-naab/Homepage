@@ -181,7 +181,8 @@ header nav a {
   color: var(--c0);
   display: flex;
 }
-.project .description h4 svg {
+.project .description h4 svg,
+section#about a svg {
   fill: var(--c0);
   height: 16px;
   width: 16px;
@@ -189,7 +190,8 @@ header nav a {
   padding-left: 4px;
   transition: transform 0.8s linear;
 }
-.project .description h4:hover svg {
+.project .description h4:hover svg,
+section#about a:hover svg {
   transform: translate(3px, -3px) scale(1.1);
 }
 .project:hover .description {
@@ -230,6 +232,14 @@ section#about {
   margin-top: 0;
   display: flex;
   flex-direction: column;
+}
+section#about a:last-child {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--c2);
+}
+section#about a:last-child svg {
+  fill: var(--c2);
 }
 section#projects {
   display: flex;

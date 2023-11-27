@@ -7,6 +7,8 @@ import battleship_app from "../src/images/battleship.jpg";
 import battleship_app_phone from "../src/images/battleship-ph.jpg";
 import restaurant_app from "../src/images/restaurant.jpg";
 import restaurant_app_phone from "../src/images/restaurant-ph.jpg";
+import cvbuilder from "../src/images/cvBuilder.jpg";
+import cvbuilder_phone from "../src/images/cvBuilder-ph.jpg";
 console.log("Assalam Alaikom");
 
 const sections = document.querySelectorAll(".content section");
@@ -17,6 +19,10 @@ const contact = document.querySelector("a[href='#contact']");
 const weather_app_image = document.querySelector(
   '.project[name="weather-app"] img'
 );
+const cvbuilder_image = document.querySelector(
+  '.project[name="cvBuilder"] img'
+);
+
 const todo_app_image = document.querySelector('.project[name="todo"] img');
 const battleship_app_image = document.querySelector(
   '.project[name="battleship"] img'
@@ -53,7 +59,6 @@ function highlightActiveLink() {
 }
 
 function displayAtBreakPoint() {
-  console.log("resising");
   if (window.innerWidth <= 870) {
     if (document.querySelector("header nav ul"))
       document.querySelector("header nav ul").remove();
@@ -67,11 +72,13 @@ function displayAtBreakPoint() {
     document.querySelector("li.contact-li").append(contact);
   }
   if (window.innerWidth <= 480) {
+    cvbuilder_image.src = cvbuilder_phone;
     todo_app_image.src = todo_app_phone;
     weather_app_image.src = weather_app_phone;
     battleship_app_image.src = battleship_app_phone;
     restaurant_page_app_image.src = restaurant_app_phone;
   } else {
+    cvbuilder_image.src = cvbuilder;
     todo_app_image.src = todo_app;
     weather_app_image.src = weather_app;
     battleship_app_image.src = battleship_app;

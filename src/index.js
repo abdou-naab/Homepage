@@ -9,12 +9,19 @@ import restaurant_app from "../src/images/restaurant.jpg";
 import restaurant_app_phone from "../src/images/restaurant-ph.jpg";
 import cvbuilder from "../src/images/cvBuilder.jpg";
 import cvbuilder_phone from "../src/images/cvBuilder-ph.jpg";
+import herosMemoCard from "../src/images/herosMemoCards.jpg";
+import herosMemoCard_phone from "../src/images/herosMemoCards-ph.jpg";
+
 console.log("Assalam Alaikom");
 
 const sections = document.querySelectorAll(".content section");
 const about = document.querySelector("a[href='#about']");
 const projects = document.querySelector("a[href='#projects']");
 const contact = document.querySelector("a[href='#contact']");
+
+const herosMemoCard_image = document.querySelector(
+  '.project[name="heros-memo-cards"] img'
+);
 
 const weather_app_image = document.querySelector(
   '.project[name="weather-app"] img'
@@ -77,12 +84,14 @@ function displayAtBreakPoint() {
     weather_app_image.src = weather_app_phone;
     battleship_app_image.src = battleship_app_phone;
     restaurant_page_app_image.src = restaurant_app_phone;
+    herosMemoCard_image.src = herosMemoCard_phone;
   } else {
     cvbuilder_image.src = cvbuilder;
     todo_app_image.src = todo_app;
     weather_app_image.src = weather_app;
     battleship_app_image.src = battleship_app;
     restaurant_page_app_image.src = restaurant_app;
+    herosMemoCard_image.src = herosMemoCard;
   }
 }
 displayAtBreakPoint();

@@ -11,6 +11,8 @@ import cvbuilder from "../src/images/cvBuilder.jpg";
 import cvbuilder_phone from "../src/images/cvBuilder-ph.jpg";
 import herosMemoCard from "../src/images/herosMemoCards.jpg";
 import herosMemoCard_phone from "../src/images/herosMemoCards-ph.jpg";
+import shop from "../src/images/shop.jpg";
+import shop_phone from "../src/images/shop-ph.jpg";
 
 console.log("Assalam Alaikom");
 
@@ -18,6 +20,10 @@ const sections = document.querySelectorAll(".content section");
 const about = document.querySelector("a[href='#about']");
 const projects = document.querySelector("a[href='#projects']");
 const contact = document.querySelector("a[href='#contact']");
+
+const shoppingCart_image = document.querySelector(
+  '.project[name="shopping-cart"] img'
+);
 
 const herosMemoCard_image = document.querySelector(
   '.project[name="heros-memo-cards"] img'
@@ -85,6 +91,7 @@ function displayAtBreakPoint() {
     battleship_app_image.src = battleship_app_phone;
     restaurant_page_app_image.src = restaurant_app_phone;
     herosMemoCard_image.src = herosMemoCard_phone;
+    shoppingCart_image.src = shop_phone;
   } else {
     cvbuilder_image.src = cvbuilder;
     todo_app_image.src = todo_app;
@@ -92,6 +99,7 @@ function displayAtBreakPoint() {
     battleship_app_image.src = battleship_app;
     restaurant_page_app_image.src = restaurant_app;
     herosMemoCard_image.src = herosMemoCard;
+    shoppingCart_image.src = shop;
   }
 }
 displayAtBreakPoint();
